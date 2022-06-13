@@ -1,0 +1,14 @@
+[
+   {
+      "title":"@@org.joget.marketplace.pluginTemplateDatalistFormatter.pluginLabel@@",
+      "properties":[
+         {
+            "name":"templateId",
+            "label":"@@org.joget.marketplace.pluginTemplateManagement.template@@",
+            "type":"selectbox",
+            "required":"True",
+            "options_ajax":"[CONTEXT_PATH]/web/json/app[APP_PATH]/plugin/org.joget.marketplace.pluginTemplate.PluginTemplateManagementMenu/service?action=listTemplate&className=org.joget.plugin.base.ApplicationPlugin"
+            }
+      ]
+   }
+]
