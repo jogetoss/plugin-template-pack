@@ -19,6 +19,7 @@ public class Activator implements BundleActivator {
         registrationList.add(context.registerService(PluginTemplateDatalistFormatter.class.getName(), new PluginTemplateDatalistFormatter(), null));
         registrationList.add(context.registerService(PluginTemplateProcessTool.class.getName(), new PluginTemplateProcessTool(), null));
         registrationList.add(context.registerService(PluginTemplatePermission.class.getName(), new PluginTemplatePermission(), null));
+        registrationList.add(context.registerService(PluginTemplateOptionsBinder.class.getName(), new PluginTemplateOptionsBinder(), null));
         
     }
 
