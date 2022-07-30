@@ -5,6 +5,7 @@ Plugin Template Pack aims to factorize repetitive configurations of the same plu
 - Datalist Formatter
 - Userview / Form Permission
 - Process Tool
+- Form Validator
 
 with more plugin types to be supported in the future.
 
