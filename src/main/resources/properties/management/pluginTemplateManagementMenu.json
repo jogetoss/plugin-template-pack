@@ -19,7 +19,7 @@
             "label":"@@userview.crudmenu.label@@",
             "type":"textfield",
             "required":"True",
-            "value":"@@org.joget.marketplace.pluginTemplateManagement.label@@"
+            "value":"@@org.joget.marketplace.pluginTemplateManagement.pluginLabel@@"
          }
       ]
    },
