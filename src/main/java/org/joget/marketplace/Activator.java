@@ -20,7 +20,7 @@ public class Activator implements BundleActivator {
         registrationList.add(context.registerService(PluginTemplateProcessTool.class.getName(), new PluginTemplateProcessTool(), null));
         registrationList.add(context.registerService(PluginTemplatePermission.class.getName(), new PluginTemplatePermission(), null));
         registrationList.add(context.registerService(PluginTemplateOptionsBinder.class.getName(), new PluginTemplateOptionsBinder(), null));
-        
+        registrationList.add(context.registerService(PluginTemplateValidator.class.getName(), new PluginTemplateValidator(), null));
     }
 
     public void stop(BundleContext context) {
