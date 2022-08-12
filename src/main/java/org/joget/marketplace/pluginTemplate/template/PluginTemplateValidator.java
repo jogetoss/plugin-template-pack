@@ -62,21 +62,33 @@ public class PluginTemplateValidator extends FormValidator {
 
             return v.validate(element, data, values);
         }catch(Exception ex){
-            LogUtil.error(PluginTemplateDatalistFormatter.class.getName(), ex, "Plugin Template - Datalist Formatter Error");
+            LogUtil.error(PluginTemplateDatalistFormatter.class.getName(), ex, "Plugin Template - Validator Error");
         }
         return false;
     }
     
     public String getElementDecoration() {
-        String decoration = "";
-        String type = (String) getProperty("type");
-        String mandatory = (String) getProperty("mandatory");
-        if ("true".equals(mandatory)) {
-            decoration += " * ";
+        try{
+            String templateId = getPropertyString("templateId");
+        
+            PluginManager pluginManager = (PluginManager) AppUtil.getApplicationContext().getBean("pluginManager");
+            AppDefinition appDef = AppUtil.getCurrentAppDefinition();
+            EnvironmentVariableDao environmentVariableDao = (EnvironmentVariableDao) AppUtil.getApplicationContext().getBean("environmentVariableDao");
+            EnvironmentVariable ev = environmentVariableDao.loadById(templateId, appDef);
+
+            JSONObject templateObject = new JSONObject(ev.getRemarks());
+
+            String className = (String)templateObject.get("pluginClass");
+            String pluginPropertiesJSON = ev.getValue();
+            pluginPropertiesJSON = AppUtil.processHashVariable(pluginPropertiesJSON, null, null, null);
+
+            Validator v = (Validator)pluginManager.getPlugin(className);
+            v.setProperties(PropertyUtil.getPropertiesValueFromJson(pluginPropertiesJSON));
+
+            return v.getElementDecoration();
+        }catch(Exception ex){
+            LogUtil.error(PluginTemplateDatalistFormatter.class.getName(), ex, "Plugin Template - Validator Error");
         }
-        if (decoration.trim().length() > 0) {
-            decoration = decoration.trim();
-        }
-        return decoration;
+        return null;
     }
 }
