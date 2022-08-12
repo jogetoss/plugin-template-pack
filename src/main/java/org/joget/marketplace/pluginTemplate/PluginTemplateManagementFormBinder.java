@@ -25,7 +25,7 @@ public class PluginTemplateManagementFormBinder extends FormBinder implements Fo
 
     @Override
     public String getVersion() {
-        return "7.0.0";
+        return "7.0.1";
     }
 
     @Override

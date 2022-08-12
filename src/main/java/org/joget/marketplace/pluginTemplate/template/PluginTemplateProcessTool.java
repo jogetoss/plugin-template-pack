@@ -23,7 +23,7 @@ public class PluginTemplateProcessTool extends DefaultApplicationPlugin{
     }
 
     public String getVersion() {
-        return "7.0.0";
+        return "7.0.1";
     }
 
     public String getDescription() {

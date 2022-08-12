@@ -26,7 +26,7 @@ public class PluginTemplateOptionsBinder extends FormBinder implements FormLoadO
 
     @Override
     public String getVersion() {
-        return "7.0.0";
+        return "7.0.1";
     }
 
     @Override
