@@ -88,7 +88,7 @@ public class PluginTemplateManagementMenu extends UserviewMenu implements Plugin
     }
 
     public String getVersion() {
-        return "7.0.1";
+        return "7.0.2";
     }
 
     public String getLabel() {

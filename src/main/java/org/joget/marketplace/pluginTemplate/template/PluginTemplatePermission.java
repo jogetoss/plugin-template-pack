@@ -21,7 +21,7 @@ public class PluginTemplatePermission extends UserviewPermission implements Form
     }
 
     public String getVersion() {
-        return "7.0.1";
+        return "7.0.2";
     }
 
     public String getDescription() {
