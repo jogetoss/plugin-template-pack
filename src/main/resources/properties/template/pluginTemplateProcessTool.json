@@ -1,6 +1,6 @@
 [
    {
-      "title":"@@org.joget.marketplace.pluginTemplateDatalistFormatter.pluginLabel@@",
+      "title":"@@org.joget.marketplace.pluginTemplateProcessTool.pluginLabel@@",
       "properties":[
          {
             "name":"templateId",
