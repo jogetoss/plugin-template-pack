@@ -67,7 +67,8 @@ public class PluginTemplateProcessTool extends DefaultApplicationPlugin{
 
             ApplicationPlugin appPlugin = (ApplicationPlugin)pluginManager.getPlugin(className);
             Map pluginProperties = PropertyUtil.getPropertiesValueFromJson(pluginPropertiesJSON);
-
+            pluginProperties.put("appDef", appDef);
+            
             if (appPlugin instanceof PropertyEditable) {
                 ((PropertyEditable) appPlugin).setProperties(pluginProperties);
             }
